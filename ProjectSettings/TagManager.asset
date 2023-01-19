@@ -4,12 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Collectable
   - Trap
   - SPUR_Guitar
   - SPUR_Trumpet
-  - Manipulatable
   - SPUR_Drums
+  - Manager
+  - Collectable
+  - Manipulatable
+  - Platform
   layers:
   - Default
   - TransparentFX

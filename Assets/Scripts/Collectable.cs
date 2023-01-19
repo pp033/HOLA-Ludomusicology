@@ -4,19 +4,37 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] private Notes note;
+    GameObject manager;
+    PointManager pointManager;
+    InstrumentManager instrumentManager;
+    ManipulatorManager manipulatorManager;
 
-    public Notes Note { get; private set; }
-
-    private void Start()
+    protected virtual void Start()
     {
-        Note = note;
+        manager = GameObject.Find("Manager");
+        pointManager = manager.GetComponent<PointManager>();
+        instrumentManager = manager.GetComponent<InstrumentManager>();
+        manipulatorManager = manager.GetComponent<ManipulatorManager>();
     }
-    public enum Notes
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        ganz,
-        halb,
-        viertel,
-        achtel
+        // not "on collision enter" bc it's set to "is trigger" only
+
+        if (this is Point)
+        {
+            pointManager.AddPoints(gameObject);
+        }
+        if(this is Instrument)
+        {
+            instrumentManager.AddInstrument(gameObject);
+        }
+        if (this is Manipulator)
+        {
+            manipulatorManager.AddManipulation(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }
