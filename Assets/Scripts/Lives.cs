@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Living : MonoBehaviour 
+public class Lives : MonoBehaviour 
 {
     private Animator anim;
     private Rigidbody2D rb;
