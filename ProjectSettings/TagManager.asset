@@ -55,3 +55,6 @@ TagManager:
   - name: Terrain
     uniqueID: 2456916255
     locked: 0
+  - name: Upper
+    uniqueID: 1994941093
+    locked: 0

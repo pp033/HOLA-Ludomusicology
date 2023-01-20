@@ -8,6 +8,7 @@ public class CameraHorizontal : MonoBehaviour
 
     [SerializeField] private GameObject leftBorder;
     [SerializeField] private GameObject rightBorder;
+    [SerializeField] private GameObject plattenspielernadel;
 
     public float publicSpeed;
 
@@ -18,8 +19,9 @@ public class CameraHorizontal : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(publicSpeed, 0, 0);
-        leftBorder.transform.Translate(publicSpeed, 0, 0);
-        rightBorder.transform.Translate(publicSpeed, 0, 0);
+        transform.Translate(publicSpeed * Time.deltaTime, 0, 0);
+        leftBorder.transform.Translate(publicSpeed * Time.deltaTime, 0, 0);
+        rightBorder.transform.Translate(publicSpeed * Time.deltaTime, 0, 0);
+        plattenspielernadel.transform.Translate(publicSpeed * Time.deltaTime, 0, 0);
     }
 }

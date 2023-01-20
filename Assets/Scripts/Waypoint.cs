@@ -21,7 +21,5 @@ public class Waypoint : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
-
-        // TODO: use delta time for camera movement to be independent from framerate?
     }
 }
