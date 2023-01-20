@@ -1070,6 +1070,24 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
+  - m_RefCount: 0
+    m_Data:
+      e00: NaN
+      e01: -4.1474352e+14
+      e02: 0
+      e03: NaN
+      e10: NaN
+      e11: 7.54e-43
+      e12: 0
+      e13: NaN
+      e20: -2.5232864e-36
+      e21: -0.00000018094215
+      e22: -5.131596e+22
+      e23: -0.00000015182559
+      e30: 2.42e-43
+      e31: 7.54e-43
+      e32: 4.5916e-41
+      e33: 7.54e-43
   m_TileColorArray:
   - m_RefCount: 69
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -1137,7 +1155,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0.0017089844, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
