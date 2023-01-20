@@ -79,7 +79,7 @@ public class Lives : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         AudioSource.PlayClipAtPoint(deathSound, cam.transform.position);
 
