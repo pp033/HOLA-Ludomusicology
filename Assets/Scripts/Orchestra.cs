@@ -5,6 +5,8 @@ using UnityEngine;
 public class Orchestra : MonoBehaviour
 {
     public List<InstrumentWrapper> instruments;
+
+    [SerializeField] public float bpm;
 }
 
 [System.Serializable]
