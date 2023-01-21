@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 203f945d47353f24289daff4ec01e5ca
+  - enabled: 1
+    path: Assets/Scenes/LV_1_VaporWave.unity
+    guid: 6b7dba14c48b54249a957647165840d0
+  - enabled: 1
+    path: Assets/Scenes/LV_2_ElectroSwing.unity
+    guid: 1032cf7e88aebc548a62a62da141d9f7
   m_configObjects: {}

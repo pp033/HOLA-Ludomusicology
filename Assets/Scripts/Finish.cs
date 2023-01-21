@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D player;
+    [SerializeField] GameObject player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
-            player.bodyType = RigidbodyType2D.Static;
-            Invoke("FinishLevel", 2f);      // no player finish animation to call the finish from
+            player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            player.GetComponent<Lives>().Invoke("Finish", 2f);  // no player finish animation to call the finish from
         }
     }
 
-    private void FinishLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
 }

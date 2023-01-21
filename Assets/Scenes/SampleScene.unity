@@ -14851,31 +14851,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6159781309915114636, guid: 647aeba51a28eb14bbc0f779033a4b05,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source Drums (Synths)
+      objectReference: {fileID: 0}
     - target: {fileID: 6159781309915114643, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: edf2e57fd9b70ce4d8743082715359fd, type: 3}
+      objectReference: {fileID: 8300000, guid: af3e677bd1b23ec488bfcf1e2caeb47b, type: 3}
+    - target: {fileID: 6159781309995679656, guid: 647aeba51a28eb14bbc0f779033a4b05,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source Guitar (Bass)
+      objectReference: {fileID: 0}
     - target: {fileID: 6159781309995679662, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: abb8f0a3341531e48a645d2c35f55a7b, type: 3}
+      objectReference: {fileID: 8300000, guid: 5312e5d8f4df42a4091f7042a21eaf7c, type: 3}
+    - target: {fileID: 6159781310066038029, guid: 647aeba51a28eb14bbc0f779033a4b05,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source Trumpet (Strings)
+      objectReference: {fileID: 0}
     - target: {fileID: 6159781310066038032, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: c0b50314b62bd8542a32611562238888, type: 3}
+      objectReference: {fileID: 8300000, guid: 55e4c4eea15eab3458fc7c614ed83ce7, type: 3}
     - target: {fileID: 6159781310293134206, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: c171cce72fa123342a362467cac78c92, type: 3}
+      objectReference: {fileID: 8300000, guid: 58db06857586c6542bde53b342474d57, type: 3}
     - target: {fileID: 6159781310683351105, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 1248bd1340d367849816ba51ce50912a, type: 3}
+      objectReference: {fileID: 8300000, guid: 8f61a311c5a4945498741de0a0bd374a, type: 3}
     - target: {fileID: 6159781311195200321, guid: 647aeba51a28eb14bbc0f779033a4b05,
         type: 3}
       propertyPath: m_Name

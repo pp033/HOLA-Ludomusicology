@@ -88,6 +88,11 @@ public class Lives : MonoBehaviour
         cam.GetComponent<CameraHorizontal>().enabled = false;
     }
 
+    public void Finish()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     private void Restart()                                                      // called from player death animation
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);             // TODO: go back to menu instead?

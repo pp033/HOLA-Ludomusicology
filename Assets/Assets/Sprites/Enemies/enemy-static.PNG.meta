@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b8d086ab290f344fb1c090cfa5ff70e
+guid: 41bf8e424703370449cc3d67cad31bb6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3644823150834211872
-    second: enemy_statisch_0
+      213: -4074912508751482651
+    second: enemy-static_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_statisch_0
+      name: enemy-static_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 188
-        width: 624
-        height: 622
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,8 +116,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e32869c7acfa6dc0800000000000000
-      internalID: -3644823150834211872
+      spriteID: 5e07211c9a00377c0800000000000000
+      internalID: -4074912508751482651
       vertices: []
       indices: 
       edges: []
