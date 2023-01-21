@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Moveable : MonoBehaviour
 {
+    private bool moveable = true;
+
     private GameObject cam;
     private Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -16,6 +18,7 @@ public class Moveable : MonoBehaviour
     public GameObject floor { get; private set; }
 
     [SerializeField] private LayerMask jumpable;
+    [SerializeField] private LayerMask crushable;
 
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jump = 7f;
@@ -45,8 +48,13 @@ public class Moveable : MonoBehaviour
 
     private void Update()
     {
-        dirx = Input.GetAxisRaw("Horizontal");
+        if(IsCrushed() && moveable)
+        {
+            GetComponent<Lives>().Die();
+            moveable = false;
+        }
 
+        dirx = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirx * speed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -96,6 +104,16 @@ public class Moveable : MonoBehaviour
             // box cast returns if there is a collision with the "new box"
 
             // see component platform effector for one way / two way jumpability
+    }
+
+    private bool IsCrushed()
+    {
+        if(Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.left, .1f, crushable) &&
+           Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.right, .1f, jumpable))
+        {
+            return true;
+        }
+        return false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Living : MonoBehaviour 
+public class Lives : MonoBehaviour 
 {
     private Animator anim;
     private Rigidbody2D rb;
@@ -79,7 +79,7 @@ public class Living : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         AudioSource.PlayClipAtPoint(deathSound, cam.transform.position);
 
