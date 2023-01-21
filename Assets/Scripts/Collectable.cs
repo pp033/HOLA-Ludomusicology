@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    GameObject manager;
-    PointManager pointManager;
-    InstrumentManager instrumentManager;
-    ManipulatorManager manipulatorManager;
-    Orchestra orchestra;
+    private GameObject manager;
+    private PointManager pointManager;
+    private InstrumentManager instrumentManager;
+    private ManipulatorManager manipulatorManager;
+    private Orchestra orchestra;
 
     protected virtual void Start()
     {

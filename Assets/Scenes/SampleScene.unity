@@ -14778,6 +14778,96 @@ PrefabInstance:
       propertyPath: scoreUI
       value: 
       objectReference: {fileID: 1390095704}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: jsonfile
+      value: chords_vaporwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: tactLengthInSeconds
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: audioclips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[0].chords.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[1].chords.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[2].chords.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[0].chords.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[0].chords.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[0].chords.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[0].chords.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[1].chords.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[1].chords.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[1].chords.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[2].chords.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[2].chords.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[2].chords.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 298704397029486900, guid: 09908c16b9c47ae49a15e1549c15898b,
+        type: 3}
+      propertyPath: chords.Array.data[2].chords.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 298704397029486903, guid: 09908c16b9c47ae49a15e1549c15898b,
         type: 3}
       propertyPath: m_Name
@@ -15245,7 +15335,7 @@ PrefabInstance:
     - target: {fileID: 9205887370695755810, guid: a1643fdaf1ac457428243cc2a467edc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.65
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 9205887370695755810, guid: a1643fdaf1ac457428243cc2a467edc2,
         type: 3}
