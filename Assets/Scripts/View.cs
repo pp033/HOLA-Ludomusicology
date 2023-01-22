@@ -26,7 +26,7 @@ public class View : MonoBehaviour
         scoreUI.text = score.ToString();
     }
 
-    public void UpdateLives(int lives)  // currently, you can only lose lives
+    public void UpdateLives(int lives)  // NOTE: currently, you can only lose lives
     {
         Image[] images = livesUI.GetComponentsInChildren<Image>();
         images[lives].sprite = livesOff; 

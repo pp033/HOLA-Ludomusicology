@@ -14,7 +14,7 @@ public class Finish : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            player.GetComponent<Lives>().Invoke("Finish", 2f);      // no player finish animation to call the finish from
+            player.GetComponent<Lives>().Invoke("Finish", 2f);      // NOTE: no player finish animation to call the finish from
         }
     }
 

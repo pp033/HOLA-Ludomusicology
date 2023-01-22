@@ -30,7 +30,7 @@ public class Lives : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // in comparison to collectables, traps are physical, not just triggers
+        // NOTE: in comparison to collectables, traps are physical colliders, not just triggers
 
         if (collision.gameObject.CompareTag("Trap"))
         {
@@ -100,7 +100,7 @@ public class Lives : MonoBehaviour
         leveling.LoadNextScene();
     }
 
-    private void Restart()  // called from player death animation
+    private void Restart()  // NOTE: called from player death animation
     {
         leveling.ReloadScene();
     }

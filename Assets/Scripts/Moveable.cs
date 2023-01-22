@@ -91,9 +91,8 @@ public class Moveable : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpable); 
-            // "new box" with down offset to box collider
-            // box cast returns if there is a collision with the "new box"
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpable);
+            // NOTE: returns if there is a collision with a "new box" with offset to box collider
     }
 
     private bool IsCrushed()

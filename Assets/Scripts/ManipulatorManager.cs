@@ -7,6 +7,7 @@ public class ManipulatorManager : MonoBehaviour
     private Orchestra orchestra;
     private GameObject player;
     private GameObject cam;
+    private PointManager points;
 
     private float timestampAudio;
     private List<InstrumentWrapper> activeAudio = new List<InstrumentWrapper>();
@@ -37,6 +38,7 @@ public class ManipulatorManager : MonoBehaviour
         player = GameObject.Find("Player");
         cam = GameObject.Find("Main Camera");
         orchestra = GetComponent<Orchestra>();
+        points = GetComponent<PointManager>();
     }
 
     public void AddManipulation(GameObject obj)
@@ -72,7 +74,8 @@ public class ManipulatorManager : MonoBehaviour
         }
     }
 
-    // private void Helper() { ChangePitch(false); } // little reminder what the lambda above actually kinda does
+    // private void Helper() { ChangePitch(false); } 
+        // NOTE: little reminder what the lambda above actually kinda does
 
     private void ChangePitch(bool up) 
     {
@@ -99,7 +102,7 @@ public class ManipulatorManager : MonoBehaviour
                 }
             }
         }
-        if (up && player.GetComponent<Moveable>().floor != null)    // sucks, but i don't know how to do it better
+        if (up && player.GetComponent<Moveable>().floor != null)    // NOTE: sucks, but i don't know how to do it better
         {
             player.transform.SetPositionAndRotation(new Vector3(     
                 player.transform.position.x,
@@ -156,7 +159,9 @@ public class ManipulatorManager : MonoBehaviour
                 if (i.tilemap != null && i.audiosource != null)
                 {
                     timestampAudio = i.audiosource.time;
-                    i.audiosource.Stop();       // Tilemaps ebenfalls deaktivieren?
+                    i.audiosource.Stop();       // TODO: Tilemaps ebenfalls deaktivieren?
+
+                    points.StopInvoke();
                 }
             }
         }
@@ -168,6 +173,8 @@ public class ManipulatorManager : MonoBehaviour
                 {
                     i.audiosource.time = timestampAudio;
                     i.audiosource.Play();
+
+                    points.ResumeInvoke();
                 }
             }
         }

@@ -22,7 +22,7 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // not "on collision enter" bc it's set to "is trigger" only
+        // NOTE: in comparison to traps, collectables are just triggers, not physical colliders
 
         if (this is Point)
         {

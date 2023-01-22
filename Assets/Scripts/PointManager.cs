@@ -10,7 +10,9 @@ public class PointManager : MonoBehaviour
     private System.Random random = new System.Random();
 
     private List<List<int>> chords { get; set; }
-    private int tact = 0;  
+    private int tact = 0;
+    float repeationRate;
+    float stopInvoke;
 
     private int score = 0;
 
@@ -19,8 +21,10 @@ public class PointManager : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("ChooseAudio", 0, 60 / GameObject.Find("Manager").GetComponent<Orchestra>().bpm * 4);
+        repeationRate = 60 / GameObject.Find("Manager").GetComponent<Orchestra>().bpm * 4;
+        InvokeRepeating("ChooseAudio", 0, repeationRate);
     }
+
     private void Start()
     {
         Deserialize();
@@ -66,7 +70,7 @@ public class PointManager : MonoBehaviour
         foreach(int chord in chords[tact])
         {
             poss.Add(chord);
-            Debug.Log("Takt " + tact + ", Chord Möglichkeit " + chord);
+            // Debug.Log("Takt " + tact + ", Chord Möglichkeit " + chord);
         }
 
         int r = random.Next(poss.Count);
@@ -74,5 +78,19 @@ public class PointManager : MonoBehaviour
         // AudioSource.PlayClipAtPoint(audioclips[poss[r]], cam.transform.position); // todo: don't play here ofc, but in add points
 
         tact++;
+    }
+
+    public void StopInvoke()
+    {
+        stopInvoke = Time.time;
+        Debug.Log("stopped at: " + stopInvoke);
+        CancelInvoke("ChooseAudio");
+    }
+
+    public void ResumeInvoke()
+    {
+        float nextInvoke = repeationRate - (stopInvoke % repeationRate);
+        Debug.Log("start at: " + Time.time + nextInvoke + ", after " + nextInvoke);
+        InvokeRepeating("ChooseAudio", nextInvoke, repeationRate);
     }
 }
