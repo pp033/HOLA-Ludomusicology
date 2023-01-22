@@ -2,17 +2,12 @@
 
 public class Manipulator : Collectable
 {
-    [SerializeField] private Manipulators manipulator;
-    [SerializeField] private bool up;
-
-    public Manipulators Manip { get; private set; }
-    public bool Up { get; private set; }
+    [SerializeField] public Manipulators manipulator;
+    [SerializeField] public bool up;
 
     protected override void Start()
     {
         base.Start();
-        Manip = manipulator;
-        Up = up;
     }
 
     public enum Manipulators

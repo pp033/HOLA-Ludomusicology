@@ -1,45 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ManipulatorManager : MonoBehaviour
 {
-    [SerializeField] private Orchestra orchestra;
+    private Orchestra orchestra;
+    private GameObject player;
+    private GameObject cam;
+
     [SerializeField] private AudioClip audioclipCollect;
     [SerializeField] private AudioClip audioclipCountdown;
 
+    [Header("Pitch Manipulation")]
     [SerializeField] private float pitchCountdown = 10f;
     [SerializeField] private float pitchMusicChange = 0.5f;
     [SerializeField] private int pitchPlatformChange = 2;
 
+    [Header("Volume Manipulation")]
     [SerializeField] private float volumeCountdown = 10f;
     [SerializeField] private float volumeMusicChange = 0.2f;
     [SerializeField] private float volumeSizeChange = 0.5f;
     [SerializeField] private float volumeJumpChange = 2;
 
+    [Header("Rewind Manipulation")]
     [SerializeField] private float rewindCountdown = 10f;
-    [SerializeField] private float pauseCountdown = 10f;
-    [SerializeField] private AudioClip pauseIndicator;
 
-    private GameObject player;
-    private GameObject cam;
+    [Header("Pause Manipulation")]
+    [SerializeField] private float pauseCountdown = 10f;
+    [SerializeField] private AudioClip pauseAudio;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         cam = GameObject.Find("Main Camera");
+        orchestra = GetComponent<Orchestra>();
     }
 
     public void AddManipulation(GameObject obj)
     {
-        if(obj.GetComponent<Manipulator>().Manip != Manipulator.Manipulators.Pause)
+        if(obj.GetComponent<Manipulator>().manipulator != Manipulator.Manipulators.Pause)
         {
             AudioSource.PlayClipAtPoint(audioclipCollect, cam.transform.position);
         }
 
-        bool up = obj.GetComponent<Manipulator>().Up;
+        bool up = obj.GetComponent<Manipulator>().up;
 
-        switch (obj.GetComponent<Manipulator>().Manip)
+        switch (obj.GetComponent<Manipulator>().manipulator)
         {
             case Manipulator.Manipulators.Pitch:
                 ChangePitch(up);
@@ -118,7 +122,7 @@ public class ManipulatorManager : MonoBehaviour
             player.transform.localScale.y + charChange,
             player.transform.localScale.z + charChange); 
 
-        player.GetComponent<Moveable>().jumpability += jumpChange;
+        player.GetComponent<Moveable>().jump += jumpChange;
     }
 
     private void Rewind(bool rewind)
@@ -131,17 +135,17 @@ public class ManipulatorManager : MonoBehaviour
             }
         }
  
-        cam.GetComponent<CameraHorizontal>().publicSpeed *= -1;
+        cam.GetComponent<Camera>().speed *= -1;
     }
 
     private void Pause(bool pause)
     {
         if (pause)
         {
-            AudioSource.PlayClipAtPoint(pauseIndicator, cam.transform.position);
+            AudioSource.PlayClipAtPoint(pauseAudio, cam.transform.position);
         }
 
-        cam.GetComponent<CameraHorizontal>().enabled = !pause;
+        cam.GetComponent<Camera>().enabled = !pause;
     }
 }
 

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -7,9 +6,6 @@ public class PointManager : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> audioclips;
     [SerializeField] private string jsonfile;
-
-    [SerializeField] private string scoreWord;
-    [SerializeField] private Text scoreUI;
 
     private System.Random random = new System.Random();
 
@@ -19,6 +15,7 @@ public class PointManager : MonoBehaviour
     private int score = 0;
 
     private GameObject cam;
+    private View view;
 
     private void Awake()
     {
@@ -28,7 +25,7 @@ public class PointManager : MonoBehaviour
     {
         Deserialize();
         cam = GameObject.Find("Main Camera");
-        scoreUI.text = scoreWord + score;       
+        view = GameObject.Find("UI").GetComponent<View>();
     }
 
     public void Deserialize()
@@ -41,7 +38,7 @@ public class PointManager : MonoBehaviour
     {
         int points = 0;
 
-        switch (obj.GetComponent<Point>().Note)
+        switch (obj.GetComponent<Point>().note)
         {
             case Point.Notes.ganz:
                 points = 8;
@@ -60,7 +57,7 @@ public class PointManager : MonoBehaviour
         }
 
         score = score + points;
-        scoreUI.text = scoreWord + score;
+        view.UpdateScore(score);
     }
 
     private void ChooseAudio()

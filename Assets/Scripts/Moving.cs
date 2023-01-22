@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Waypoint : MonoBehaviour
+public class Moving : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private float speed = 2f;
 
     private int current = 0;
-
 
     private void Update()
     {

@@ -1,29 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Moveable : MonoBehaviour
 {
     private bool moveable = true;
+    private float dirx;
 
     private GameObject cam;
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-    private float dirx;
 
-    public float jumpability;
-
-    public GameObject floor { get; private set; }
+    [SerializeField] private AudioClip audioclipJump;
 
     [SerializeField] private LayerMask jumpable;
     [SerializeField] private LayerMask crushable;
 
     [SerializeField] private float speed = 7f;
-    [SerializeField] private float jump = 7f;
+    [SerializeField] public float jump = 7f;
 
-    [SerializeField] private AudioClip audioclipJump;
+    public GameObject floor { get; private set; }
 
     private enum Movements
     {
@@ -33,17 +29,13 @@ public class Moveable : MonoBehaviour
         falling
     }
 
-
     private void Start()
     {
         cam = GameObject.Find("Main Camera");
-
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
-
-        jumpability = jump;
     }
 
     private void Update()
@@ -60,7 +52,7 @@ public class Moveable : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             AudioSource.PlayClipAtPoint(audioclipJump, cam.transform.position);
-            rb.velocity = new Vector2(rb.velocity.x, jumpability);
+            rb.velocity = new Vector2(rb.velocity.x, jump);
         }
 
         AnimUpdate();
@@ -102,8 +94,6 @@ public class Moveable : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpable); 
             // "new box" with down offset to box collider
             // box cast returns if there is a collision with the "new box"
-
-            // see component platform effector for one way / two way jumpability
     }
 
     private bool IsCrushed()

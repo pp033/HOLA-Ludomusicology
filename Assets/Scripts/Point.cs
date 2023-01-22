@@ -2,14 +2,11 @@
 
 public class Point : Collectable
 {
-    [SerializeField] private Notes note;
-
-    public Notes Note { get; private set; }
+    [SerializeField] public Notes note;
 
     protected override void Start()
     {
         base.Start();
-        Note = note;
     }
 
     public enum Notes

@@ -2,14 +2,11 @@
 
 public class Instrument : Collectable
 {
-    [SerializeField] private Instruments instrument;
-
-    public Instruments Inst { get; private set; }
+    [SerializeField] public Instruments instrument;
 
     protected override void Start()
     {
         base.Start();
-        Inst = instrument;
     }
 
     public enum Instruments

@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InstrumentManager : MonoBehaviour 
 {
-    [SerializeField] private Orchestra orchestra;
-    [SerializeField] private AudioClip audioclip;
-
+    private Orchestra orchestra;
     private GameObject cam;
+
+    [SerializeField] private AudioClip audioclipCollect;
 
     private void Start()
     {
+        orchestra = GetComponent<Orchestra>();
         cam = GameObject.Find("Main Camera");
 
         foreach (InstrumentWrapper i in orchestra.instruments)
@@ -31,9 +30,9 @@ public class InstrumentManager : MonoBehaviour
 
     public void AddInstrument(GameObject obj) 
     {
-        AudioSource.PlayClipAtPoint(audioclip, cam.transform.position);
+        AudioSource.PlayClipAtPoint(audioclipCollect, cam.transform.position);
 
-        InstrumentWrapper wrap = orchestra.instruments.Find(i => i.instrument == obj.GetComponent<Instrument>().Inst);
+        InstrumentWrapper wrap = orchestra.instruments.Find(i => i.instrument == obj.GetComponent<Instrument>().instrument);
 
         wrap.tilemap.SetActive(true);
         wrap.audiosource.mute = false;

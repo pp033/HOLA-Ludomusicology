@@ -1,22 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Lives : MonoBehaviour 
 {
+    private View view;
+    private LevelManager leveling;
+
+    private GameObject manager;
+    private Orchestra orchestra;
     private Animator anim;
     private Rigidbody2D rb;
     private GameObject cam;
 
-    [SerializeField] private Orchestra orchestra;
+    private int lives = 3;
+
     [SerializeField] private List<AudioClip> damageSounds;
     [SerializeField] private AudioClip deathSound;
 
-    [SerializeField] private int lives = 3;
-
     private void Start()
     {
+        manager = GameObject.Find("Manager");
+        orchestra = manager.GetComponent<Orchestra>();
+        view = GameObject.Find("UI").GetComponent<View>();
         cam = GameObject.Find("Main Camera");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -34,11 +40,12 @@ public class Lives : MonoBehaviour
 
     private void LoseLife()
     {
-        // anim.SetTrigger("Hit");
+        // anim.SetTrigger("Hit"); // TODO: Hurt Animation missing
+
+        lives--;
 
         LoseInstrument();
-        lives--;
-        Debug.Log("Übrige Leben:" + lives);
+        view.UpdateLives(lives);
 
         var random = new System.Random();
         int r = random.Next(damageSounds.Count);
@@ -85,16 +92,16 @@ public class Lives : MonoBehaviour
 
         anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
-        cam.GetComponent<CameraHorizontal>().enabled = false;
+        cam.GetComponent<Camera>().enabled = false;
     }
 
     public void Finish()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        leveling.LoadNextScene();
     }
 
-    private void Restart()                                                      // called from player death animation
+    private void Restart()  // called from player death animation
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);             // TODO: go back to menu instead?
+        leveling.ReloadScene();
     }
 }
