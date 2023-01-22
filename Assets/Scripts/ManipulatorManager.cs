@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class ManipulatorManager : MonoBehaviour
 {
     private Orchestra orchestra;
     private GameObject player;
     private GameObject cam;
+
+    private float timestampAudio;
+    private List<InstrumentWrapper> activeAudio = new List<InstrumentWrapper>();
 
     [SerializeField] private AudioClip audioclipCollect;
     [SerializeField] private AudioClip audioclipCountdown;
@@ -140,11 +145,32 @@ public class ManipulatorManager : MonoBehaviour
 
     private void Pause(bool pause)
     {
-        if (pause)
+        activeAudio.Clear();
+
+        if (pause) // TODO: hochzählen von takten im point manager muss stoppen
         {
             AudioSource.PlayClipAtPoint(pauseAudio, cam.transform.position);
-        }
 
+            foreach (InstrumentWrapper i in orchestra.instruments)
+            {
+                if (i.tilemap != null && i.audiosource != null)
+                {
+                    timestampAudio = i.audiosource.time;
+                    i.audiosource.Stop();       // Tilemaps ebenfalls deaktivieren?
+                }
+            }
+        }
+        else
+        {
+            foreach (InstrumentWrapper i in orchestra.instruments)
+            {
+                if (i.tilemap != null && i.audiosource != null)
+                {
+                    i.audiosource.time = timestampAudio;
+                    i.audiosource.Play();
+                }
+            }
+        }
         cam.GetComponent<Camera>().enabled = !pause;
     }
 }
