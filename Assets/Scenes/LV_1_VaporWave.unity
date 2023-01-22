@@ -3311,7 +3311,7 @@ MonoBehaviour:
   leftBorder: {fileID: 544532053}
   rightBorder: {fileID: 964926654}
   recordNeedle: {fileID: 142533176}
-  finishLine: {fileID: 0}
+  finishLine: {fileID: 359621703}
 --- !u!1 &544532053
 GameObject:
   m_ObjectHideFlags: 0
