@@ -15,4 +15,5 @@ public class InstrumentWrapper
     [SerializeField] public Instrument.Instruments instrument;
     [SerializeField] public GameObject tilemap;
     [SerializeField] public AudioSource audiosource;
+    [SerializeField] public GameObject inventory;
 }

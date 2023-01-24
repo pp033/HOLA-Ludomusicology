@@ -13498,7 +13498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a18e3f99491542b8d164091f25e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioclips: []
+  audioclips:
+  - {fileID: 8300000, guid: 962f5fbd1c5f1294ca8f50e811fd841a, type: 3}
+  - {fileID: 8300000, guid: ff61d26efae35f64a9635eddeddcf033, type: 3}
+  - {fileID: 8300000, guid: 9f2a66fb6ebafb1459ee999178522c62, type: 3}
+  - {fileID: 8300000, guid: 8222f6b054b019848850c06412b3534a, type: 3}
+  - {fileID: 8300000, guid: 10d72b83e3456e7438780ba5c96fdbef, type: 3}
   jsonfile: chords_vaporwave
 --- !u!114 &1588094051
 MonoBehaviour:
@@ -13567,18 +13572,23 @@ MonoBehaviour:
   - instrument: 0
     tilemap: {fileID: 747188286}
     audiosource: {fileID: 1314466076}
+    inventory: {fileID: 0}
   - instrument: 3
     tilemap: {fileID: 426620062}
     audiosource: {fileID: 1473335025}
+    inventory: {fileID: 0}
   - instrument: 1
     tilemap: {fileID: 1165119616}
     audiosource: {fileID: 1545870796}
+    inventory: {fileID: 0}
   - instrument: 2
     tilemap: {fileID: 1513010175}
     audiosource: {fileID: 562878617}
+    inventory: {fileID: 0}
   - instrument: 4
     tilemap: {fileID: 865015126}
     audiosource: {fileID: 719172077}
+    inventory: {fileID: 0}
   bpm: 96
 --- !u!114 &1588094055
 MonoBehaviour:

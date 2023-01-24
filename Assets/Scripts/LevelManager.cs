@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadScene(0);
+        }
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
