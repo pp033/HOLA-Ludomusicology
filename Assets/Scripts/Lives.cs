@@ -21,6 +21,7 @@ public class Lives : MonoBehaviour
     private void Start()
     {
         manager = GameObject.Find("Manager");
+        leveling = manager.GetComponent<LevelManager>();
         orchestra = manager.GetComponent<Orchestra>();
         view = GameObject.Find("UI").GetComponent<View>();
         cam = GameObject.Find("Main Camera");
@@ -32,7 +33,7 @@ public class Lives : MonoBehaviour
     {
         // NOTE: in comparison to collectables, traps are physical colliders, not just triggers
 
-        if (collision.gameObject.CompareTag("Trap"))
+        if (collision.collider.gameObject.CompareTag("Trap"))
         {
             LoseLife();
         }
@@ -40,7 +41,7 @@ public class Lives : MonoBehaviour
 
     private void LoseLife()
     {
-        // anim.SetTrigger("Hit"); // TODO: Hurt Animation missing
+        anim.SetTrigger("Damage");
 
         lives--;
 

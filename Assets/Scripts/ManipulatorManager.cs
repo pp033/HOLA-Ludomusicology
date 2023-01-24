@@ -8,14 +8,14 @@ public class ManipulatorManager : MonoBehaviour
     private GameObject player;
     private GameObject cam;
 
-    private float timestampAudio;
+    private float timestampPauseEffect;
+    private float timestampPitchEffect;
 
     [SerializeField] private AudioClip audioclipCollect;
     [SerializeField] private AudioClip audioclipCountdown;
 
     [Header("Pitch Manipulation")]
     [SerializeField] private float pitchCountdown = 10f;
-    [SerializeField] private float pitchMusicChange = 0.5f;
     [SerializeField] private int pitchPlatformChange = 2;
 
     [Header("Volume Manipulation")]
@@ -72,12 +72,11 @@ public class ManipulatorManager : MonoBehaviour
     }
 
     // private void Helper() { ChangePitch(false); } 
-        // NOTE: little reminder what the lambda above actually kinda does
+    // NOTE: little reminder what the lambda above actually kinda does
 
-    private void ChangePitch(bool up) 
+    private void ChangePitch(bool up)
     {
         int platformChange = (up) ? pitchPlatformChange : pitchPlatformChange * -1;
-        float musicChange = (up) ? pitchMusicChange : pitchMusicChange * -1;
 
         foreach (InstrumentWrapper i in orchestra.instruments)
         {
@@ -86,22 +85,38 @@ public class ManipulatorManager : MonoBehaviour
                 if (i.instrument != Instrument.Instruments.MAIN)
                 {
                     i.tilemap.transform.SetPositionAndRotation(new Vector3(
-                        i.tilemap.transform.position.x, 
-                        i.tilemap.transform.position.y + platformChange,  
-                        i.tilemap.transform.position.z), 
+                        i.tilemap.transform.position.x,
+                        i.tilemap.transform.position.y + platformChange,
+                        i.tilemap.transform.position.z),
                         i.tilemap.transform.rotation);
+                }
 
-                    i.audiosource.pitch += musicChange;
+                if (up && i.audiosource.clip == i.audio)
+                {
+                    timestampPitchEffect = i.audiosource.time;
+                    i.audiosource.clip = i.audioPitchHigh;
+                    i.audiosource.time = timestampPitchEffect;
+                    i.audiosource.Play();
+                }
+                else if (!up && i.audiosource.clip == i.audio)
+                {
+                    timestampPitchEffect = i.audiosource.time;
+                    i.audiosource.clip = i.audioPitchLow;
+                    i.audiosource.time = timestampPitchEffect;
+                    i.audiosource.Play();
                 }
                 else
                 {
-                    i.audiosource.pitch += musicChange;
+                    timestampPitchEffect = i.audiosource.time;
+                    i.audiosource.clip = i.audio;
+                    i.audiosource.time = timestampPitchEffect;
+                    i.audiosource.Play();
                 }
             }
         }
         if (up && player.GetComponent<Moveable>().floor != null)    // NOTE: sucks, but i don't know how to do it better
         {
-            player.transform.SetPositionAndRotation(new Vector3(     
+            player.transform.SetPositionAndRotation(new Vector3(
                 player.transform.position.x,
                 player.transform.position.y + platformChange,
                 player.transform.position.z),
@@ -153,8 +168,8 @@ public class ManipulatorManager : MonoBehaviour
             {
                 if (i.tilemap != null && i.audiosource != null)
                 {
-                    timestampAudio = i.audiosource.time;
-                    i.audiosource.Stop();       // TODO: Tilemaps ebenfalls deaktivieren?
+                    timestampPauseEffect = i.audiosource.time;
+                    i.audiosource.Stop();       // TODO: also deactivate tilemaps?
                 }
             }
         }
@@ -164,7 +179,7 @@ public class ManipulatorManager : MonoBehaviour
             {
                 if (i.tilemap != null && i.audiosource != null)
                 {
-                    i.audiosource.time = timestampAudio;
+                    i.audiosource.time = timestampPauseEffect;
                     i.audiosource.Play();
                 }
             }
@@ -213,7 +228,7 @@ public class Countdown : MonoBehaviour
         {
             if(!invoked)
             {
-                callback.Invoke();      // TODO: only keep counting when effect is still active (complementary item wasn't collected)
+                callback.Invoke();      // TODO: only keep counting when complementary item wasn't collected
                 invoked = true;
                 Destroy(this);
             }

@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 public class PointManager : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> audioclips;
     [SerializeField] private string jsonfile;
 
-    private List<List<int>> chords { get; set; }
+    private List<List<int>> chords;
     private int score = 0;
 
     private Orchestra orchestra;
@@ -18,16 +17,12 @@ public class PointManager : MonoBehaviour
 
     private void Start()
     {
-        Deserialize();
+        JsonDeserializer deserializer = new JsonDeserializer();
+        chords = deserializer.Deserialize(jsonfile);
+
         cam = GameObject.Find("Main Camera");
         view = GameObject.Find("UI").GetComponent<View>();
         orchestra = GetComponent<Orchestra>();
-    }
-
-    public void Deserialize()
-    {
-        TextAsset json = Resources.Load<TextAsset>(jsonfile);
-        chords = JsonConvert.DeserializeObject<List<List<int>>>(json.text);
     }
 
     public void AddPoints(GameObject obj)
@@ -53,7 +48,6 @@ public class PointManager : MonoBehaviour
             default:
                 break;
         }
-
         score = score + points;
         view.UpdateScore(score);
     }
@@ -61,7 +55,7 @@ public class PointManager : MonoBehaviour
     private void PlaySound()
     {
         // float time = orchestra.instruments[0].audiosource.timeSamples / orchestra.instruments[0].audiosource.clip.frequency;
-        // TODO: Könnte auf anderen Systemen wichtig werden
+        // TODO: use this wherever .time is used instead?
 
         float time = orchestra.instruments[0].audiosource.time;
         int tact = (int)(time / (60 / orchestra.bpm * 4));
@@ -74,6 +68,6 @@ public class PointManager : MonoBehaviour
 
         int r = random.Next(poss.Count);
         AudioSource.PlayClipAtPoint(audioclips[poss[r]], cam.transform.position);
-        Debug.Log("Takt " + tact + ", Chord " + poss[r]);
+        Debug.Log("Takt " + (tact + 1) + ", Chord " + poss[r]);
     }
 }
