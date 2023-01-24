@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 321f1ca6c64718f43960477c642c864d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2784415937332520740
+    second: swing-tile-base-1_0
+  - first:
+      213: -5798044669549759820
+    second: swing-tile-base-1_1
+  - first:
+      213: -4723039869364026894
+    second: swing-tile-base-1_2
+  - first:
+      213: 261601675943160330
+    second: swing-tile-base-1_3
+  - first:
+      213: -4045099897227250123
+    second: swing-tile-base-1_4
+  - first:
+      213: -7870707668075527388
+    second: swing-tile-base-1_5
+  - first:
+      213: -8105183330657000044
+    second: swing-tile-base-1_6
+  - first:
+      213: 6139666300400056824
+    second: swing-tile-base-1_7
+  - first:
+      213: 1919443817503822333
+    second: swing-tile-base-1_8
+  - first:
+      213: 2297810359930636017
+    second: swing-tile-base-1_9
+  - first:
+      213: -1870460821024612426
+    second: swing-tile-base-1_10
+  - first:
+      213: 8130133588905511941
+    second: swing-tile-base-1_11
+  - first:
+      213: 1466807876958793410
+    second: swing-tile-base-1_12
+  - first:
+      213: 675047618457293078
+    second: swing-tile-base-1_13
+  - first:
+      213: 8387824336468536675
+    second: swing-tile-base-1_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 518
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swing-tile-base-1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42724a3ea8b34a620800000000000000
+      internalID: 2784415937332520740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2b3a7a715398fa0800000000000000
+      internalID: -5798044669549759820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_2
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1cc863344647eb0800000000000000
+      internalID: -4723039869364026894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_3
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a2d37965561a300800000000000000
+      internalID: 261601675943160330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_4
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536fcc8431becd7c0800000000000000
+      internalID: -4045099897227250123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_5
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4234a61a311a5c290800000000000000
+      internalID: -7870707668075527388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_6
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495a5c034ba948f80800000000000000
+      internalID: -8105183330657000044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_7
+      rect:
+        serializedVersion: 2
+        x: 3626
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f938ca88f9743550800000000000000
+      internalID: 6139666300400056824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_8
+      rect:
+        serializedVersion: 2
+        x: 4144
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df192ac7bfb33aa10800000000000000
+      internalID: 1919443817503822333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_9
+      rect:
+        serializedVersion: 2
+        x: 4662
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6c0e8195673ef10800000000000000
+      internalID: 2297810359930636017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_10
+      rect:
+        serializedVersion: 2
+        x: 5180
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfda8c1bc9ca06e0800000000000000
+      internalID: -1870460821024612426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_11
+      rect:
+        serializedVersion: 2
+        x: 5698
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c4f2f7c6904d070800000000000000
+      internalID: 8130133588905511941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_12
+      rect:
+        serializedVersion: 2
+        x: 6216
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ceafdb1ef52b5410800000000000000
+      internalID: 1466807876958793410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_13
+      rect:
+        serializedVersion: 2
+        x: 6734
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611de908b304e5900800000000000000
+      internalID: 675047618457293078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swing-tile-base-1_14
+      rect:
+        serializedVersion: 2
+        x: 7252
+        y: 0
+        width: 518
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d659d1bc9876470800000000000000
+      internalID: 8387824336468536675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

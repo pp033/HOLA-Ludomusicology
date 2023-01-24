@@ -85,6 +85,8 @@ public class Lives : MonoBehaviour
                 LoseInstrument();
             }
         }
+
+        view.UpdateInventory();
     }
 
     public void Die()
