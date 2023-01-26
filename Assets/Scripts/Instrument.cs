@@ -15,6 +15,11 @@ public class Instrument : Collectable
         guitar,
         trumpet,
         drums,
-        keys
+        keys,
+        synths,
+        strings, 
+        brass,
+        sax,
+        bass
     }
 }

@@ -44,9 +44,9 @@ public class Lives : MonoBehaviour
         anim.SetTrigger("Damage");
 
         lives--;
-
-        LoseInstrument();
         view.UpdateLives(lives);
+
+        // LoseInstrument();        // NOTE: feature not wanted anymore
 
         var random = new System.Random();
         int r = random.Next(damageSounds.Count);
