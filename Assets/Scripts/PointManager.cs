@@ -5,6 +5,7 @@ public class PointManager : MonoBehaviour
 {
     [SerializeField] private List<AudioClip> audioclips;
     [SerializeField] private string jsonfile;
+    [SerializeField] private int beats;
 
     private List<List<int>> chords;
     private int score = 0;
@@ -58,7 +59,7 @@ public class PointManager : MonoBehaviour
         // TODO: use this wherever .time is used instead?
 
         float time = orchestra.instruments[0].audiosource.time;
-        int tact = (int)(time / (60 / orchestra.bpm * 4));
+        int tact = (int)(time / (60 / orchestra.bpm * beats));
 
         List<int> poss = new List<int>();
         foreach (int chord in chords[tact])

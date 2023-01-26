@@ -95,7 +95,7 @@ public class Lives : MonoBehaviour
 
         anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
-        cam.GetComponent<Camera>().enabled = false;
+        cam.GetComponent<CameraHorizontal>().enabled = false;
     }
 
     public void Finish()

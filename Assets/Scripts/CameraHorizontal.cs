@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraHorizontal : MonoBehaviour
 {
     [SerializeField] public float speed;
 
@@ -8,13 +8,6 @@ public class Camera : MonoBehaviour
     [SerializeField] private GameObject rightBorder;
     [SerializeField] private GameObject recordNeedle;
     [SerializeField] private GameObject finishLine;
-
-    private GameObject player;
-
-    private void Start()
-    {
-        player = GameObject.Find("Player");
-    }
 
     private void Update()
     {
@@ -25,10 +18,5 @@ public class Camera : MonoBehaviour
             rightBorder.transform.Translate(speed * Time.deltaTime, 0, 0);
             recordNeedle.transform.Translate(speed * Time.deltaTime, 0, 0);
         }
-
-        transform.position = new Vector3(
-            transform.position.x,
-            Mathf.Clamp(player.transform.position.y, 0, 20),
-            transform.position.z);
     }
 }

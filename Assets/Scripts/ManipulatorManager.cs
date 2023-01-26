@@ -155,7 +155,7 @@ public class ManipulatorManager : MonoBehaviour
             }
         }
  
-        cam.GetComponent<Camera>().speed *= -1;
+        cam.GetComponent<CameraHorizontal>().speed *= -1;
     }
 
     private void Pause(bool pause)
@@ -184,7 +184,7 @@ public class ManipulatorManager : MonoBehaviour
                 }
             }
         }
-        cam.GetComponent<Camera>().enabled = !pause;
+        cam.GetComponent<CameraHorizontal>().enabled = !pause;
     }
 }
 
