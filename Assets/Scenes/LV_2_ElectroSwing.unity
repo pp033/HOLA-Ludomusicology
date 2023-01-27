@@ -4986,7 +4986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7757d5f2cc75cb04891353bc56e2ac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.82568806
+  speed: 0.8450704
   leftBorder: {fileID: 544532053}
   rightBorder: {fileID: 964926654}
   recordNeedle: {fileID: 4939127}

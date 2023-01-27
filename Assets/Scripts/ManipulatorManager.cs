@@ -11,6 +11,11 @@ public class ManipulatorManager : MonoBehaviour
     private float timestampPauseEffect;
     private float timestampPitchEffect;
 
+    private bool platformMoving = false;
+    private bool platformMovingUp = false;
+    private float platformMovingInterpolation = 0.0f;
+    private List<float> platformOriginalHeights = new List<float>();    
+
     [SerializeField] private AudioClip audioclipCollect;
     [SerializeField] private AudioClip audioclipCountdown;
 
@@ -36,6 +41,42 @@ public class ManipulatorManager : MonoBehaviour
         player = GameObject.Find("Player");
         cam = GameObject.Find("Main Camera");
         orchestra = GetComponent<Orchestra>();
+
+        foreach(InstrumentWrapper i in orchestra.instruments)
+        {
+            platformOriginalHeights.Add(i.tilemap.transform.position.y);
+        }
+    }
+
+    private void Update()
+    {
+        if (platformMoving)
+        {
+            platformMovingInterpolation += Time.deltaTime * 1;
+            float translate = Mathf.Lerp(0.0f, platformMovingUp ? pitchPlatformChange : pitchPlatformChange * -1, platformMovingInterpolation);
+
+            for (int i = 0; i < orchestra.instruments.Count; ++i)
+            {
+                if (orchestra.instruments[i].instrument != Instrument.Instruments.MAIN)
+                {
+                    orchestra.instruments[i].tilemap.transform.SetPositionAndRotation(new Vector3(
+                        orchestra.instruments[i].tilemap.transform.position.x,
+                        platformOriginalHeights[i] + translate,
+                        orchestra.instruments[i].tilemap.transform.position.z),
+                        orchestra.instruments[i].tilemap.transform.rotation);
+                }
+            }
+            if (platformMovingInterpolation > 1.0f)
+            {
+                platformMoving = false;
+                platformMovingInterpolation = 0.0f;
+
+                for (int j = 0; j < platformOriginalHeights.Count; ++j)
+                {
+                    platformOriginalHeights[j] += platformMovingUp ? pitchPlatformChange : pitchPlatformChange * -1;
+                }
+            }
+        }
     }
 
     public void AddManipulation(GameObject obj)
@@ -76,21 +117,13 @@ public class ManipulatorManager : MonoBehaviour
 
     private void ChangePitch(bool up)
     {
-        int platformChange = (up) ? pitchPlatformChange : pitchPlatformChange * -1;
+        platformMovingUp = (up) ? true : false;
+        platformMoving = true;
 
         foreach (InstrumentWrapper i in orchestra.instruments)
         {
             if (i.tilemap != null && i.audiosource != null)
             {
-                if (i.instrument != Instrument.Instruments.MAIN)
-                {
-                    i.tilemap.transform.SetPositionAndRotation(new Vector3(
-                        i.tilemap.transform.position.x,
-                        i.tilemap.transform.position.y + platformChange,
-                        i.tilemap.transform.position.z),
-                        i.tilemap.transform.rotation);
-                }
-
                 if (up && i.audiosource.clip == i.audio)
                 {
                     timestampPitchEffect = i.audiosource.time;
@@ -113,14 +146,6 @@ public class ManipulatorManager : MonoBehaviour
                     i.audiosource.Play();
                 }
             }
-        }
-        if (up && player.GetComponent<Moveable>().floor != null)    // NOTE: sucks, but i don't know how to do it better
-        {
-            player.transform.SetPositionAndRotation(new Vector3(
-                player.transform.position.x,
-                player.transform.position.y + platformChange,
-                player.transform.position.z),
-                player.transform.rotation);
         }
     }
 
