@@ -29,6 +29,8 @@ public class Lives : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+  
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // NOTE: in comparison to collectables, traps are physical colliders, not just triggers

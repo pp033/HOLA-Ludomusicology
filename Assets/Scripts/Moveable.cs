@@ -40,11 +40,13 @@ public class Moveable : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(IsCrushed() && moveable)
         {
             GetComponent<Lives>().Die();
             moveable = false;
         }
+        */
 
         dirx = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirx * speed, rb.velocity.y);

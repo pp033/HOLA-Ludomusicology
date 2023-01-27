@@ -13535,6 +13535,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8222f6b054b019848850c06412b3534a, type: 3}
   - {fileID: 8300000, guid: 10d72b83e3456e7438780ba5c96fdbef, type: 3}
   jsonfile: chords_vaporwave
+  beats: 0
 --- !u!114 &1588094051
 MonoBehaviour:
   m_ObjectHideFlags: 0
