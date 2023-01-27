@@ -23,7 +23,6 @@ public class Collectable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // NOTE: in comparison to traps, collectables are just triggers, not physical colliders
-
         if (this is Point)
         {
             pointManager.AddPoints(gameObject);

@@ -18,12 +18,12 @@ public class PointManager : MonoBehaviour
 
     private void Start()
     {
-        JsonDeserializer deserializer = new JsonDeserializer();
-        chords = deserializer.Deserialize(jsonfile);
-
+        orchestra = GetComponent<Orchestra>();
         cam = GameObject.Find("Main Camera");
         view = GameObject.Find("UI").GetComponent<View>();
-        orchestra = GetComponent<Orchestra>();
+
+        JsonDeserializer deserializer = new JsonDeserializer();
+        chords = deserializer.Deserialize(jsonfile);
     }
 
     public void AddPoints(GameObject obj)
@@ -58,7 +58,7 @@ public class PointManager : MonoBehaviour
         // float time = orchestra.instruments[0].audiosource.timeSamples / orchestra.instruments[0].audiosource.clip.frequency;
         // TODO: use this wherever .time is used instead?
 
-        float time = orchestra.instruments[0].audiosource.time;
+        float time = this.orchestra.instruments[0].audiosource.time;
         int tact = (int)(time / (60 / orchestra.bpm * beats));
 
         List<int> poss = new List<int>();

@@ -4,6 +4,7 @@ public class InstrumentManager : MonoBehaviour
 {
     private Orchestra orchestra;
     private GameObject cam;
+    private View view;
 
     [SerializeField] private AudioClip audioclipCollect;
 
@@ -11,6 +12,7 @@ public class InstrumentManager : MonoBehaviour
     {
         orchestra = GetComponent<Orchestra>();
         cam = GameObject.Find("Main Camera");
+        view = GameObject.Find("UI").GetComponent<View>();
 
         foreach (InstrumentWrapper i in orchestra.instruments)
         {
@@ -36,5 +38,7 @@ public class InstrumentManager : MonoBehaviour
 
         wrap.tilemap.SetActive(true);
         wrap.audiosource.mute = false;
+
+        view.UpdateInventory();
     }
 }
