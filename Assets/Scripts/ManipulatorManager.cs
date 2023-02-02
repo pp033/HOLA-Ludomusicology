@@ -48,7 +48,7 @@ public class ManipulatorManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Update() // NOTE: used for the pitch manipulator
     {
         if (platformMoving)
         {

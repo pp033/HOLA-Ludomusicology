@@ -2,8 +2,9 @@
 
 public class Moveable : MonoBehaviour
 {
-    private bool moveable = true;
     private float dirx;
+
+    private bool crushed = false;
 
     private GameObject cam;
     private Rigidbody2D rb;
@@ -14,7 +15,6 @@ public class Moveable : MonoBehaviour
     [SerializeField] private AudioClip audioclipJump;
 
     [SerializeField] private LayerMask jumpable;
-    [SerializeField] private LayerMask crushable;
 
     [SerializeField] private float speed = 7f;
     [SerializeField] public float jump = 7f;
@@ -40,13 +40,11 @@ public class Moveable : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if(IsCrushed() && moveable)
+        if(IsCrushed() && !crushed)
         {
             GetComponent<Lives>().Die();
-            moveable = false;
+            crushed = true;
         }
-        */
 
         dirx = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirx * speed, rb.velocity.y);
@@ -99,8 +97,10 @@ public class Moveable : MonoBehaviour
 
     private bool IsCrushed()
     {
-        if(Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.left, .1f, crushable) &&
-           Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.right, .1f, jumpable))
+        Vector3 screenPoint = cam.GetComponent<Camera>().WorldToViewportPoint(sprite.bounds.center);
+        bool visible = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+
+        if (!visible)
         {
             return true;
         }

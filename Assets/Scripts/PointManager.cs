@@ -69,6 +69,5 @@ public class PointManager : MonoBehaviour
 
         int r = random.Next(poss.Count);
         AudioSource.PlayClipAtPoint(audioclips[poss[r]], cam.transform.position);
-        // Debug.Log("Takt " + (tact + 1) + ", Chord " + poss[r]);
     }
 }
